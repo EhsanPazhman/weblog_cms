@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>weblog</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 
@@ -98,7 +98,7 @@
 
 
 </body>
-<script src="../js/jquery-3.5.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
 
 </html>

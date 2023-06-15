@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>weblog</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 
@@ -55,7 +55,7 @@
         <div class="row">
             <div class="post-page">
                 <div class="image-post">
-                    <img src="../image/post1.png" alt="" style="max-width: 600px;">
+                    <img src="../assets/image/post1.png" alt="" style="max-width: 600px;">
                 </div>
                 <div class="information-post">
                     <div> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
@@ -125,7 +125,7 @@
                 <div class="comments">
                     <div class="comment-item">
                         <div class="comment-image">
-                            <img src="../image/profile.png"alt="">
+                            <img src="../assets/image/profile.png" alt="">
                         </div>
                         <div class="comment-text">
                             <p class="username-comment">امین مظفری</p>
@@ -141,7 +141,7 @@
 
                     <div class="comment-item">
                         <div class="comment-image">
-                            <img src="../image/28159_d2db946f-3840-8eeb-66c2-39f399afce2e_رضا_الفت.jpg"alt="">
+                            <img src="../assets/image/28159_d2db946f-3840-8eeb-66c2-39f399afce2e_رضا_الفت.jpg" alt="">
                         </div>
                         <div class="comment-text">
                             <p class="username-comment">رضا الفت</p>
@@ -188,7 +188,7 @@
 
 
 </body>
-<script src="../js/jquery-3.5.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
 
 </html>
