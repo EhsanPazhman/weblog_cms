@@ -1,0 +1,362 @@
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/eot/iransansdnbold.eot');
+	src: url('../fonts/eot/iransansdnbold.eot?#iefix') format('embedded-opentype'),
+		/* IE6-8 */
+		url('../fonts/woff2/iransansdnbold.woff2') format('woff2'),
+		/* FF39+,Chrome36+, Opera24+*/
+		url('../fonts/woff/iransansdnbold.woff') format('woff'),
+		/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		url('../fonts/ttf/iransansdnbold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/eot/iransansdnlight.eot');
+	src: url('../fonts/eot/iransansdnlight.eot?#iefix') format('embedded-opentype'),
+		/* IE6-8 */
+		url('../fonts/woff2/iransansdnlight.woff2') format('woff2'),
+		/* FF39+,Chrome36+, Opera24+*/
+		url('../fonts/woff/iransansdnlight.woff') format('woff'),
+		/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		url('../fonts/ttf/iransansdnlight.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/eot/iransansdn.eot');
+	src: url('../fonts/eot/iransansdn.eot?#iefix') format('embedded-opentype'),
+		/* IE6-8 */
+		url('../fonts/woff2/iransansdn.woff2') format('woff2'),
+		/* FF39+,Chrome36+, Opera24+*/
+		url('../fonts/woff/iransansdn.woff') format('woff'),
+		/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		url('../fonts/ttf/iransansdn.ttf') format('truetype');
+}
+
+* {
+	font-family: iransansdn;
+	text-align: right;
+	direction: rtl;
+	font-size: 17px;
+}
+
+input {
+	outline: none;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.nav-item {
+	float: right;
+}
+
+.placholder {
+	font-size: 14px;
+}
+
+.dropdown-menu {
+	text-align: right;
+	border-radius: 15px;
+	margin-left: -38px;
+	font-size: 15px;
+}
+
+.dropdown-menu a {
+	font-size: 15.5px;
+}
+
+.information-site {
+	background-color: #333;
+	border-left: 47px solid #fff;
+	border-right: 37px solid #fff;
+	text-align: center;
+	padding: 6px;
+	border-radius: 20%;
+}
+
+.information-site img {
+	height: 150px;
+}
+
+.information-site span {
+	color: #fff;
+}
+
+.post-item p {
+	padding-top: 18px;
+}
+
+.post-item a {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.post-item span {
+	font-size: 14px;
+	color: #686e71;
+}
+
+.post-item {
+	border: 1px solid #ecf0f4;
+	border-radius: 10px 10px 0 0;
+	margin-top: 25px;
+}
+
+.post-item img {
+	border-radius: 10px 10px 0 0;
+}
+
+.post-caption {
+	padding: 0 11px;
+	margin-bottom: 15px;
+}
+
+.post-item .post-caption .seen-post svg {
+	padding-left: 3px;
+	margin-left: 1px;
+	margin-top: -1px;
+}
+
+.post-item .post-caption .seen-post {
+	opacity: 0.8;
+}
+
+.post-comment {
+	padding-right: 10px;
+}
+
+.post-comment svg {
+	font-size: 15px;
+}
+
+.post-m a {
+	padding-left: 14px;
+	color: #00bffe !important;
+	font-weight: 100;
+}
+
+.post-m a:hover {
+	color: #6fc341 !important;
+}
+
+.post-m a img {
+	position: relative;
+}
+
+.hover-image-post {
+	height: 250px;
+	width: 350px;
+	background-color: #000;
+	border-radius: 10px 10px 0 0;
+	opacity: 0.55;
+	margin-top: -250px;
+}
+
+.more-opst {
+	font-size: 15px !important;
+	border: 1.5px solid #fff;
+	color: #fff;
+	margin-top: -145px;
+	position: absolute;
+	margin-right: 110px;
+	border-radius: 7px;
+	transition: 0.4s;
+}
+
+.more-opst:hover {
+	border-radius: 0;
+	transition: 0.4s;
+	color: #fff;
+}
+
+.hovershow {
+	display: none;
+}
+
+.post-item:hover .hovershow {
+	display: block;
+}
+
+
+footer .footer1 {
+	background: url('https://toplearn.com/site/images/footer-pattern.png') repeat 0 0 #333;
+	height: 230px;
+}
+
+footer .footer1 form input.input-group {
+	width: 456px;
+	height: 40px;
+	display: inline;
+	border-radius: 6px;
+	border: 0px;
+	font-size: 14px;
+	padding-right: 15px;
+}
+
+footer .footer1 form input.btn {
+	height: 40px;
+	margin-right: -5px;
+	position: absolute;
+	border-radius: 6px 0 0 6px;
+}
+
+footer .footer1 form {
+	border: 2px dashed #334d60;
+	border-radius: 6px;
+	padding: 11px;
+}
+
+.namad img {
+	background-color: #fff;
+	padding: 15px;
+	margin: 25px;
+	border-radius: 10px;
+}
+
+.namad {
+	margin-top: 10px;
+}
+
+.footer2 {
+	background-color: #334d60;
+	height: 58px;
+}
+
+.footer2 p {
+	color: #fff;
+	padding-top: 15px;
+}
+
+
+
+.post-page {
+	padding: 20px;
+	border: 2px dashed #334d60;
+	border-radius: 15px;
+}
+
+.image-post img {
+	border-radius: 10px 10px 250px 10px;
+}
+
+.information-post {
+	opacity: 0.7;
+	margin-top: -87px;
+}
+
+.information-post svg {
+	margin-left: 10px;
+}
+
+.content-post {
+	width: 600px;
+	text-align: justify;
+	line-height: 30px;
+}
+
+.tag-post {
+	padding: 20px;
+	border: 2px dashed #007bff;
+	border-radius: 15px;
+	width: 600px;
+}
+
+.tag-post span {
+	font-size: 12px;
+	padding: 6px;
+	cursor: pointer;
+	border-radius: 3px;
+	background-color: #dce4e9;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.tag-post span:hover {
+	background-color: #dce4e9;
+}
+
+.comment-image img {
+	border-radius: 50%;
+	width: 70px;
+	border: 3px solid #e8ebf2;
+}
+
+.comment-text p.username-comment {
+	font-size: 15px;
+	display: inline-block;
+	border-left: 1px solid #e8ebf2;
+	padding-left: 10px;
+}
+
+.comment-text span {
+	font-size: 12px;
+	opacity: 0.9;
+	padding-right: 5px;
+	border-left: 1px solid #e8ebf2;
+	padding-left: 10px;
+}
+
+.comment-text a {
+	font-size: 11px;
+}
+
+.comment-text {
+	border: 1px solid #e8ebf2;
+	padding: 15px;
+	border-radius: 5px;
+	margin-right: 80px;
+	margin-top: -65px;
+	margin-bottom: 20px;
+}
+
+p.text-comment {
+	font-size: 13px;
+}
+.userac{
+	padding-bottom: 15px;
+	margin:  -15px auto 10px auto;
+	text-align: center;
+}
+.register-form input {
+	width: 100%;
+	cursor: pointer;
+	margin-bottom: 25px;
+	height: 40px;
+	border-radius: 10px;
+	outline: none;
+	border: 1px solid #fff;
+	background: #edf1f7;
+	font-size: 14px;
+	padding: 5px 8px;
+}
+
+.submit-register {
+	background-color: #007bff !important;
+}
+
+.rememberme {
+	width: 5% !important;
+	margin-right: 5px;
+	margin-top: -10px;
+}
+
+.remembermelabel {
+	font-size: 12px;
+	position: absolute;
+	margin-right: 10px;
+}
