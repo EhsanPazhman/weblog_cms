@@ -10,7 +10,15 @@ function register($userData): bool
     $stmt->execute([':name' => $userData['name'], 'email' => $userData['email'], ':password' => $password, ':repass' => $repass]);
     return $stmt->rowCount() ? true : false;
 }
-
+// Count the number of users
+function countUsers()
+{
+    global $conn;
+    $sql = "SELECT count(*) FROM users";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->rowCount();
+}
 // Getting user information by email
 function getUserByEmail($email): object|null
 {

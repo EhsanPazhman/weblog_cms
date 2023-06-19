@@ -68,17 +68,17 @@
         <?php unset($_SESSION['success']) ?>
         <?php endif; ?>
         <div class="col-4 information-site">
-            <img src="assets/image/stat-time.svg" alt="">
+            <img src="<?= siteUrl('image/stat-time.svg') ?>" alt="">
             <span>تعداد مقالات</span>
             <span>۱۵</span>
         </div>
         <div class="col-4 information-site">
-            <img src="assets/image/stat-teacher.svg" alt="">
+            <img src="<?= siteUrl('image/stat-teacher.svg') ?>" alt="">
             <span>نویسندگان ما ۵</span>
         </div>
         <div class="col-4 information-site">
-            <img src="assets/image/stat-student.svg" alt="">
-            <span>تعداد کاربران ۴۳۰</span>
+            <img src="<?= siteUrl('image/stat-student.svg') ?>" alt="">
+            <span>تعداد کاربران <?= countUsers() ?></span>
         </div>
     </div>
 </div>

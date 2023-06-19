@@ -1,9 +1,10 @@
 <?php
 include "bootstrap/init.php";
-$user = getLoggedInUser();
-
+// User exit condition
 if (isset($_GET['exit']))
 {
     userExit();
 }
+
+$user = getLoggedInUser();
 include "views/index.php";

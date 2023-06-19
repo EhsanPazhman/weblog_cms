@@ -1,10 +1,14 @@
 <?php
-// function fot assets addresses
+// function for assets addresses
 function assets($uri = ''):string
 {
     return BASE_URL . "assets/$uri";
 }
-
+// function for admin assets addresses
+function adminAssets($uri = ''):string
+{
+    return BASE_URL . "admin/assets/$uri";
+}
 // function for site url addresses
 function siteUrl($uri =''): string
 {
