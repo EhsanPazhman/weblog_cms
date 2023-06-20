@@ -9,6 +9,9 @@ if (isset($id) and is_numeric($id)){
         successMessage('دسته بندی با موفقیت حذف شد', 'admin/views/categories.php');
     if (deletePost($id))
         successMessage('مقاله با موفقیت حذف شد', 'admin/views/posts.php');
+    if (changeRole($id))
+        successMessage('نقش کاربر با موفقیت تغییر یافت', 'admin/views/users.php');
+
 }
 
 // The condition of checking the type of server request
@@ -80,6 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (updatePost($_POST,$id))
             successMessage('مقاله با موفقیت افزوده شد', 'admin/views/posts.php');
     }
+    /* end edit post conditions */
+
+    /* start edit post conditions */
     /* end edit post conditions */
 
 }

@@ -17,3 +17,4 @@ try {
 include BASE_PATH . "functions/f-auth.php";
 include BASE_PATH . "functions/f-categories.php";
 include BASE_PATH . "functions/f-posts.php";
+include BASE_PATH . "functions/f-users.php";

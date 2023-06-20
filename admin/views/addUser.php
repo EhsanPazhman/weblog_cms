@@ -4,26 +4,28 @@
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <?php if (!empty($_SESSION['error'])): ?>
+                            <h4 class="alert alert-danger" style="width: 50%; margin: auto; text-align: center"><?= $_SESSION['error'] ?></h4>
+                            <?php unset($_SESSION['error']) ?>
+                        <?php endif; ?>
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="../index.php" class="">
-                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
-                            </a>
                             <h3>ثبت نام</h3>
                         </div>
+                        <form action="<?= siteUrl('auth.php') ?>?action=register" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe">
+                            <input name="name" type="text" class="form-control" id="floatingText" placeholder="jhondoe">
                             <label for="floatingText">نام</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">ایمیل</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">رمز</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input name="repass" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">تکرار رمز</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -34,6 +36,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">ثبت نام</button>
                         <p class="text-center mb-0">از قبل یک حساب دارید؟ <a href="signin.php" class="me-1">ورود</a></p>
+                        </form>
                     </div>
                 </div>
             </div>

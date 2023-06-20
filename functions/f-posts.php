@@ -41,7 +41,7 @@ function updatePost($data,$id): bool
 
 }
 
-// function to post a category
+// function to delete a post
 function deletePost($id): bool
 {
     global $conn;
