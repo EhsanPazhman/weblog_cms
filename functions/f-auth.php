@@ -30,16 +30,16 @@ function getUserByEmail($email): object|null
     return $records[0] ?? null;
 }
 
-//// Get the user`s username
-//function getUserName($username): bool
-//{
-//    global $conn;
-//    $sql = "SELECT * FROM users WHERE username = :username";
-//    $stmt = $conn->prepare($sql);
-//    $stmt->execute([':username' => $username]);
-//    return $stmt->rowCount() ? true : false;
-//}
-
+// Get the authors
+function getAuthors(): bool
+{
+    global $conn;
+    $sql = "SELECT * FROM users WHERE role = 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return (bool)$stmt->rowCount();
+}
+$authors = getAuthors();
 // User login function
 function login($email, $password): bool
 {
@@ -65,6 +65,7 @@ function getLoggedInUser()
 {
     return $_SESSION['login'] ?? null;
 }
+$user = getLoggedInUser();
 
 // User exit function
 function userExit()

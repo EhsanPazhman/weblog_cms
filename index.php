@@ -5,7 +5,4 @@ if (isset($_GET['exit']))
 {
     userExit();
 }
-
-$user = getLoggedInUser();
-
 include "views/index.php";

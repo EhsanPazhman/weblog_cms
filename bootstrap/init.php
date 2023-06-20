@@ -1,5 +1,6 @@
 <?php
 session_start();
+$counter = 0;
 include "constants.php";
 include BASE_PATH . "bootstrap/config.php";
 include BASE_PATH . "vendor/autoload.php";
@@ -15,3 +16,4 @@ try {
 }
 include BASE_PATH . "functions/f-auth.php";
 include BASE_PATH . "functions/f-categories.php";
+include BASE_PATH . "functions/f-posts.php";

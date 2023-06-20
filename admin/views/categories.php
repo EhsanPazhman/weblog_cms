@@ -1,5 +1,4 @@
 <?php include "header.php";
-$counter = 0;
 ?>
     <!-- Sidebar Start -->
 <?php include "sidebar.php"; ?>
@@ -14,11 +13,6 @@ $counter = 0;
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 rounded align-items-center justify-content-center mx-0">
-            <?php if (!empty($_SESSION['error'])): ?>
-                <h4 class="alert bg-danger"
-                    style="width: 50%; margin: auto; text-align: center"><?= $_SESSION['error'] ?></h4>
-                <?php unset($_SESSION['error']) ?>
-            <?php endif; ?>
             <?php if (!empty($_SESSION['success'])): ?>
                 <h4 class="alert bg-success"
                     style="width: 50%; margin: auto; text-align: center"><?= $_SESSION['success'] ?></h4>

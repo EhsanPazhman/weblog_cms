@@ -12,6 +12,11 @@
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 rounded align-items-center justify-content-center mx-0">
+            <?php if (!empty($_SESSION['success'])): ?>
+                <h4 class="alert bg-success mb-3"
+                    style="width: 50%; margin: auto; text-align: center"><?= $_SESSION['success'] ?></h4>
+                <?php unset($_SESSION['success']) ?>
+            <?php endif; ?>
             <div class="col-12 h-100">
                 <a href="<?= siteUrl('admin/views/addPost.php') ?>" class="btn-success mb-3 p-2" id="aStyle"><span>افزودن مقاله جدید</span></a>
                 <!-- Table Start -->
@@ -36,22 +41,30 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>برنامه نوسی</td>
-                                    <td>احسان</td>
-                                    <td> ن  qp</td>
-                                    <td>ندارد</td>
-                                    <td>تگ ها</td>
-                                    <td>منتشر شده</td>
-                                    <td>12/6/2033</td>
-                                    <td>12/6/2033</td>
-                                    <td>12/6/2033</td>
+                                <?php if (sizeof($posts)): ?>
+                                <?php foreach ($posts as $post): ?>
+                                    <tr>
+                                    <td><?= ++$counter ?></td>
+                                    <td><?= $post->category ?></td>
+                                    <td><?= $post->author ?></td>
+                                    <td><?= $post->title ?></td>
+                                    <td style="width: 40px; height: 40px"><?= $post->img ?></td>
+                                    <td><?= $post->tags ?></td>
+                                    <td><?= $post->status ?></td>
+                                    <td><?= verta($post->published_at)->format('Y/m/d') ?></td>
+                                    <td><?= verta($post->created_at)->format('Y/m/d') ?></td>
+                                    <td><?= verta($post->updated_at)->format('Y/m/d') ?></td>
                                     <td>
-                                        <a href="<?= siteUrl('admin/views/editPost.php') ?>?postId=" class="btn-warning p-2 ms-2" style="border-radius: 4px; border: 1px solid yellow">ویراش</a>
-                                        <a href="" class="btn-danger p-2" style="border-radius: 4px; border: 1px solid red">حذف</a>
+                                        <a href="<?= siteUrl('admin/views/editPost.php') ?>?postId=<?= $post->id ?>" class="btn-warning p-2 ms-2" style="border-radius: 4px; border: 1px solid yellow">ویرایش</a>
+                                        <a href="<?= siteUrl('admin/') ?>?id=<?= $post->id ?>"
+                                           class="btn-danger p-2" style="border-radius: 4px; border: 1px solid red"
+                                           onclick="return confirm('مطمئن هستید که میخواهید مقاله <?= $post->title ?> حذف کنید؟');">حذف</a>
                                     </td>
                                 </tr>
+                                <?php endforeach; ?>
+                                <?php else: ?>
+                            <td>هیچ چیزی وجود ندار هنوز!</td>
+                            <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
