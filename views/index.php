@@ -30,6 +30,9 @@
                     <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                         <span class="dropdown-item"><?= $user->name ?></span>
                         <span class="dropdown-item"><?= $user->email ?></span>
+                        <?php if (isset($user) and $user->role == 0): ?>
+                        <?= '<span class="dropdown-item"><a href="'.siteUrl('admin/').'">مدیریت</a></span>' ?>
+                        <?php endif; ?>
                         <a class="dropdown-item" style="cursor: pointer" href="?exit">خروج</a>
                     </div>
                 </li>
@@ -62,22 +65,23 @@
 <!-- start content -->
 <br><br>
 <div>
+
     <div class="row d-none d-lg-flex">
         <?php if (!empty($_SESSION['success'])): ?>
             <h4 class="alert alert-success" style="width: 50%; margin: auto; text-align: center"><?= $_SESSION['success'] ?></h4>
         <?php unset($_SESSION['success']) ?>
         <?php endif; ?>
         <div class="col-4 information-site">
-            <img src="<?= siteUrl('image/stat-time.svg') ?>" alt="">
+            <img src="<?= assets('image/stat-time.svg') ?>" alt="">
             <span>تعداد مقالات</span>
             <span>۱۵</span>
         </div>
         <div class="col-4 information-site">
-            <img src="<?= siteUrl('image/stat-teacher.svg') ?>" alt="">
+            <img src="<?= assets('image/stat-teacher.svg') ?>" alt="">
             <span>نویسندگان ما ۵</span>
         </div>
         <div class="col-4 information-site">
-            <img src="<?= siteUrl('image/stat-student.svg') ?>" alt="">
+            <img src="<?= assets('image/stat-student.svg') ?>" alt="">
             <span>تعداد کاربران <?= countUsers() ?></span>
         </div>
     </div>
@@ -93,7 +97,7 @@
     <div class="row">
         <div class="col-12 col-lg-4">
             <div class="post-item">
-                <a href="" class="item-hover-btn"><img src="assets/image/post1.png" alt="" width="100%">
+                <a href="" class="item-hover-btn"><img src="<?= assets('image/post1.png') ?>" alt="" width="100%">
                     <div class="hovershow">
                         <div class="hover-image-post d-none d-lg-flex">
                         </div>

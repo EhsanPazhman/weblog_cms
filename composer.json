@@ -1,0 +1,19 @@
+{
+    "name": "ehsan/weblog",
+    "description": "this is a simple weblog project",
+    "require": {
+        "hekmatinasser/verta": "^8.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ehsan\\Weblog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ehsan Pejman",
+            "email": "ehsanpejman1@gmail.com"
+        }
+    ]
+}

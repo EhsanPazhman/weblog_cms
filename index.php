@@ -7,4 +7,5 @@ if (isset($_GET['exit']))
 }
 
 $user = getLoggedInUser();
+
 include "views/index.php";

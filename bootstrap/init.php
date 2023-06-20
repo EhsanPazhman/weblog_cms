@@ -2,6 +2,7 @@
 session_start();
 include "constants.php";
 include BASE_PATH . "bootstrap/config.php";
+include BASE_PATH . "vendor/autoload.php";
 include BASE_PATH . "functions/helpers.php";
 
 try {
@@ -12,4 +13,5 @@ try {
 }catch (PDOException $e) {
     echo 'Connection Failed' . $e->getMessage();
 }
-include BASE_PATH . "functions/func-auth.php";
+include BASE_PATH . "functions/f-auth.php";
+include BASE_PATH . "functions/f-categories.php";
