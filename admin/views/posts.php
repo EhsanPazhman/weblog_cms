@@ -50,13 +50,18 @@
                                     <td><?= $post->title ?></td>
                                     <td style="width: 40px; height: 40px"><?= $post->img ?></td>
                                     <td><?= $post->tags ?></td>
-                                    <td><?= $post->status ?></td>
-                                    <td><?= verta($post->published_at)->format('Y/m/d') ?></td>
-                                    <td><?= verta($post->created_at)->format('Y/m/d') ?></td>
-                                    <td><?= verta($post->updated_at)->format('Y/m/d') ?></td>
+                                    <td>
+                                        <a href="<?= siteUrl('admin/') ?>?action=postStatus&id=<?= $post->id ?>">
+                                        <?= $post->status == 1 ? "<i class='btn-outline-success p-2' style='border-radius: 4px; border: 1px solid green'>تایید شده</i>" :
+                                            "<i class='btn-danger p-2' style='border-radius: 4px; border: 1px solid red'>تایید نشده</i>" ?>
+                                        </a>
+                                    </td>
+                                    <td><?= verta($post->published_at)->format('%d %B') ?></td>
+                                    <td><?= verta($post->created_at)->format('%d %B') ?></td>
+                                    <td><?= verta($post->updated_at)->format('%d %B') ?></td>
                                     <td>
                                         <a href="<?= siteUrl('admin/views/editPost.php') ?>?postId=<?= $post->id ?>" class="btn-warning p-2 ms-2" style="border-radius: 4px; border: 1px solid yellow">ویرایش</a>
-                                        <a href="<?= siteUrl('admin/') ?>?id=<?= $post->id ?>"
+                                        <a href="<?= siteUrl('admin/') ?>?action=delete&id=<?= $post->id ?>"
                                            class="btn-danger p-2" style="border-radius: 4px; border: 1px solid red"
                                            onclick="return confirm('مطمئن هستید که میخواهید مقاله <?= $post->title ?> حذف کنید؟');">حذف</a>
                                     </td>

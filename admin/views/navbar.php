@@ -55,7 +55,7 @@
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img class="rounded-circle me-lg-2" src="<?= adminAssets('img/user.jpg') ?>" alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">احسان پژمان</span>
+                <span class="d-none d-lg-inline-flex"><?= $user->name ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="#" class="dropdown-item">پروفایل من</a>
@@ -63,5 +63,5 @@
                 <a href="#" class="dropdown-item">خروج</a>
             </div>
         </div>
-    </div>
+            <a href="<?= siteUrl() ?>" class="btn-secondary p-1" style="border-radius: 4px; border: 1px solid #404040">رفتن به سایت</a>
 </nav>

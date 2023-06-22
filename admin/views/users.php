@@ -45,7 +45,7 @@
                                             <td><?= verta($user->created_at)->format('Y/m/d') ?></td>
 
                                             <td>
-                                                <a href="<?= siteUrl('admin/') ?>?id=<?= $user->id ?>"
+                                                <a href="<?= siteUrl('admin/') ?>?action=status&id=<?= $user->id ?>"
                                                    class="btn-warning p-2 ms-2"
                                                    style="border-radius: 4px; border: 1px solid yellow"><?= $user->role == 0 ? 'ارتقا' : 'لغو ارتقا' ?></a>
                                                 <a href="<?= siteUrl('admin/') ?>?id=<?= $user->id ?>"

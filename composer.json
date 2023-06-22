@@ -2,7 +2,8 @@
     "name": "ehsan/weblog",
     "description": "this is a simple weblog project",
     "require": {
-        "hekmatinasser/verta": "^8.3"
+        "hekmatinasser/verta": "^8.3",
+      "ext-pdo": "*"
     },
     "license": "MIT",
     "autoload": {

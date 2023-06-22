@@ -3,8 +3,6 @@ include "bootstrap/init.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $action = $_GET['action'];
     if ($action == 'register'){
         $name = $_POST['name'];
         $repass = $_POST['repass'];
