@@ -19,16 +19,6 @@ try {
 }catch (PDOException $e) {
     echo 'Connection Failed' . $e->getMessage();
 }
-// Count the number of table columns in database
-function countTable($tableName, $condition =''): bool|array
-{
-    global $conn;
-    $sql = "SELECT count(*) as count FROM $tableName $condition";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_OBJ);
-}
-
 
 // include files
 include BASE_PATH . "functions/common-f.php";

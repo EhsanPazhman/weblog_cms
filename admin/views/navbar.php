@@ -60,8 +60,8 @@
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="#" class="dropdown-item">پروفایل من</a>
                 <a href="#" class="dropdown-item">تنظیمات</a>
-                <a href="#" class="dropdown-item">خروج</a>
+                <a href="<?= siteUrl('admin/') ?>" class="dropdown-item">خروج</a>
             </div>
         </div>
-            <a href="<?= siteUrl() ?>" class="btn-secondary p-1" style="border-radius: 4px; border: 1px solid #404040">رفتن به سایت</a>
+            <a href="<?= siteUrl() ?>" class="btn btn-outline-success p-2" style="border-radius: 4px; border: 1px solid #404040">سایت</a>
 </nav>

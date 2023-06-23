@@ -56,14 +56,20 @@ $postComments = readAllCommentsOfPost($id);
             <b>نظر شما چیه؟ بنویسید...
             </b><br>
             <div class="pt-4">
-                <form action="<?= siteUrl('') ?>?action=addComment&id=<?= $post[0]->id ?> " method="post">
+<?php if (loginCheck()) : ?>
+    <form action="<?= siteUrl('') ?>?action=addComment&id=<?= $post[0]->id ?> " method="post">
                     <textarea name="comment" class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
                     <input name="articleTitle" type="text" value="<?= $post[0]->title ?>" style="display:none;">
                     <input name="articleId" type="text" value="<?= $post[0]->id ?>" style="display:none;">
                     <input name="userName" type="text" value="<?= $user->name ?>" style="display:none;">
               <button class="btn btn-success mt-2 px-2">ثبت دیدگاه</button>
                 </form>
+<?php else: ?>
+                <div class="p-4">
+                    <h3>برای ثبت نظر ابتدا وارد شوید!</h3>
+                </div>
 
+<?php endif; ?>
             </div>
             <div class="comments">
                 <?php if (sizeof($postComments)): ?>
@@ -82,8 +88,8 @@ $postComments = readAllCommentsOfPost($id);
                 </div>
 <?php endforeach; ?>
 <?php else: ?>
-    <div class="comment-text">
-        <h1>اولین نفری باشید که نظر میدهد</h1>
+    <div class="comment-text m-5 p-5">
+        <h2>اولین نفری باشید که نظر میدهد..</h2>
     </div>
 <?php endif; ?>
             </div>

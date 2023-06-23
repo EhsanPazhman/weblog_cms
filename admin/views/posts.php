@@ -73,6 +73,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <?php include "paginate.php"; ?>
                     </div>
                 </div>
                 <!-- Table End -->

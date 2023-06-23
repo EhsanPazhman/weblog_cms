@@ -111,4 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /* end edit comment conditions */
 
 }
-include "views/index.php";
+if (isset($_GET['exit']))
+{
+    userExit();
+}
+if (loginCheck()){
+    include "views/index.php";
+}else{
+    include "../views/index.php";
+}

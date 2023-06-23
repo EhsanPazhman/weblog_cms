@@ -83,6 +83,7 @@
                 </div>
                 <?php endforeach; ?>
             </div>
+            <?php include "./admin/views/paginate.php"?>
         </div>
     </div>
     <br><br><br><br>

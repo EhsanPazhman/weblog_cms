@@ -39,7 +39,7 @@
                                 <tbody>
                                 <?php foreach ($comments as $comment): ?>
                                     <tr>
-                                        <td><?= ++$counter ?></td>
+                                        <td><?= $comment->id ?></td>
                                         <td><?= $comment->user_name ?></td>
                                         <td><?= $comment->comment ?></td>
                                         <td><?= $comment->article_title ?></td>
@@ -56,7 +56,8 @@
                                                class="btn-outline-warning p-2 ms-2"
                                                style="border-radius: 4px; border: 1px solid yellow">ویراش</a>
                                             <a href="<?= siteUrl('admin/') ?>?action=delete&id=<?= $comment->id ?>"
-                                               class="btn-outline-danger p-2" style="border-radius: 4px; border: 1px solid red"
+                                               class="btn-outline-danger p-2"
+                                               style="border-radius: 4px; border: 1px solid red"
                                                onclick="return confirm('مطمئن هستید که میخواهید کامنت <?= $comment->comment ?> حذف کنید؟');">حذف</a>
                                         </td>
                                     </tr>
@@ -64,6 +65,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <?php include "paginate.php"; ?>
                     </div>
                 </div>
                 <!-- Table End -->

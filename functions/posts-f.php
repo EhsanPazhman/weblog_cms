@@ -9,15 +9,13 @@ function addPost($data): bool
     return (bool)$stmt->rowCount();
 }
 // function to read all posts from database
-function readAllPosts(): array|bool
-{
-    global $conn;
-    $sql = "SELECT * FROM `articles`";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_OBJ);
-}
-$posts = readAllPosts();
+// count all columns
+$stmt = $conn->query('SELECT count(*) FROM articles');
+$numRows = $stmt->fetchColumn();
+// Number of pages required.
+$totalPage = ceil($numRows/$prePag);
+// function to read all categories from database
+$posts = readAll('articles');
 
 // function to update a post
 function updatePost($data,$id): bool

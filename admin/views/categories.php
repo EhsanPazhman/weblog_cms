@@ -36,7 +36,7 @@
                         <tbody>
                         <?php foreach ($categories as $category): ?>
                         <tr>
-                                <td><?= ++$counter ?></td>
+                                <td><?= $category->id ?></td>
                                 <td><?= $category->name ?></td>
                                 <td><?= verta($category->created_at)->format('%d %B') ?></td>
                                 <td><?= verta($category->updated_at)->format('%d %B') ?></td>
@@ -52,9 +52,11 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <?php include "paginate.php"; ?>
                 </div>
                 <!-- Table End -->
             </div>
+
         </div>
     </div>
     <!-- Blank End -->

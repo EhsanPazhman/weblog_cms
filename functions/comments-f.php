@@ -1,4 +1,13 @@
 <?php
+// count all columns
+$stmt = $conn->query('SELECT count(*) FROM comments');
+$numRows = $stmt->fetchColumn();
+// Number of pages required.
+$totalPage = ceil($numRows/$prePag);
+
+// function to read all comments from database
+$comments = readAll('comments');
+
 // function to add comment
 function addComment($data): bool
 {
@@ -9,16 +18,6 @@ function addComment($data): bool
     return (bool)$stmt->rowCount();
 }
 
-// function to read all comments from database
-function readAllComments(): array|bool
-{
-    global $conn;
-    $sql = "SELECT * FROM `comments`";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_OBJ);
-}
-$comments = readAllComments();
 // function to read all comments of a post from database
 function readAllCommentsOfPost($id): array|bool
 {

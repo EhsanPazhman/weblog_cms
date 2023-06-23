@@ -1,4 +1,12 @@
 <?php
+// count all columns
+$stmt = $conn->query('SELECT count(*) FROM categories');
+$numRows = $stmt->fetchColumn();
+// Number of pages required.
+$totalPage = ceil($numRows/$prePag);
+// function to read all categories from database
+$categories = readAll('categories');
+
 // function to add Categories
 function addCategory($name): bool
 {
@@ -8,16 +16,6 @@ function addCategory($name): bool
     $stmt->execute([':name' => $name]);
     return (bool)$stmt->rowCount();
 }
-// function to read all categories from database
-function readAllCategories(): array|bool
-{
-    global $conn;
-    $sql = "SELECT * FROM categories";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_OBJ);
-}
-$categories = readAllCategories();
 
 // function to read one Category from database
 function readCategoryByName($name): bool
