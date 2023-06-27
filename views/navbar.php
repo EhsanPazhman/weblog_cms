@@ -48,7 +48,11 @@
     </div>
 </nav>
 <!-- end headers -->
-<form class="form-inline mt-4 mb-5" style="direction: ltr">
-    <input class="form-control mr-sm-2 placholder" type="search" placeholder="دنبال چی میگردی؟" aria-label="Search" style="margin-left: 84px">
+<form action="<?= siteUrl('search.php') ?>?action=search" method="post" class="form-inline mt-4 mb-5" style="direction: ltr">
+    <input name="keyWord" class="form-control mr-sm-2 placholder" type="search" placeholder="دنبال چی میگردی؟" aria-label="Search" style="margin-left: 84px">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position: absolute;">جستجو</button>
 </form>
+
+
+
+

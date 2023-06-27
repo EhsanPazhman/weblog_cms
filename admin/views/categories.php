@@ -44,7 +44,7 @@
                                     <a href="<?= siteUrl('admin/views/editCategory.php') ?>?categoryId=<?= $category->id ?>"
                                        class="btn btn-outline-warning p-2 ms-2"
                                        style="border-radius: 4px; border: 1px solid yellow">ویراش</a>
-                                    <a href="<?= siteUrl('admin/') ?>?action=delete&id=<?= $category->id ?>"
+                                    <a href="<?= siteUrl('admin/') ?>?action=deleteCategory&id=<?= $category->id ?>"
                                     class="btn btn-outline-danger p-2" style="border-radius: 4px; border: 1px solid red"
                                        onclick="return confirm('مطمئن هستید که میخواهید دسته بندی <?= $category->name ?> حذف کنید؟');">حذف</a>
                                 </td>

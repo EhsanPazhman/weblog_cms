@@ -1,6 +1,7 @@
 <?php include "header.php";
 $id = $_GET['postId'] ?? null;
 $post = read('articles',$id);
+addView($id);
 $postComments = readAllCommentsOfPost($id);
 ?>
 
@@ -33,7 +34,7 @@ $postComments = readAllCommentsOfPost($id);
                 <div> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                         <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                    </svg>۱۳۵</div>
+                    </svg><?= countTable('views',"WHERE article_id = $id")[0]->count ?></div>
                 <div><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     </svg><?= $post[0]->author ?></div>

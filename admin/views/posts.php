@@ -47,8 +47,8 @@
                                     <td><?= ++$counter ?></td>
                                     <td><?= $post->category ?></td>
                                     <td><?= $post->author ?></td>
-                                    <td><?= $post->title ?></td>
-                                    <td style="width: 40px; height: 40px"><?= $post->img ?></td>
+                                    <td style="width: 150px;"><?= $post->title ?></td>
+                                    <td><?= "<img src='".siteUrl("admin/assets/img/$post->img")."' alt='' style='width: 100px; height: 50px'>" ?></td>
                                     <td><?= $post->tags ?></td>
                                     <td>
                                         <a href="<?= siteUrl('admin/') ?>?action=postStatus&id=<?= $post->id ?>">
@@ -61,7 +61,7 @@
                                     <td><?= verta($post->updated_at)->format('%d %B') ?></td>
                                     <td>
                                         <a href="<?= siteUrl('admin/views/editPost.php') ?>?postId=<?= $post->id ?>" class="btn-warning p-2 ms-2" style="border-radius: 4px; border: 1px solid yellow">ویرایش</a>
-                                        <a href="<?= siteUrl('admin/') ?>?action=delete&id=<?= $post->id ?>"
+                                        <a href="<?= siteUrl('admin/') ?>?action=deletePost&id=<?= $post->id ?>"
                                            class="btn-danger p-2" style="border-radius: 4px; border: 1px solid red"
                                            onclick="return confirm('مطمئن هستید که میخواهید مقاله <?= $post->title ?> حذف کنید؟');">حذف</a>
                                     </td>

@@ -27,3 +27,4 @@ include BASE_PATH . "functions/categories-f.php";
 include BASE_PATH . "functions/posts-f.php";
 include BASE_PATH . "functions/users-f.php";
 include BASE_PATH . "functions/comments-f.php";
+include BASE_PATH . "functions/search-f.php";

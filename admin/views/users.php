@@ -48,7 +48,7 @@
                                                 <a href="<?= siteUrl('admin/') ?>?action=status&id=<?= $user->id ?>"
                                                    class="btn-warning p-2 ms-2"
                                                    style="border-radius: 4px; border: 1px solid yellow"><?= $user->role == 0 ? 'ارتقا' : 'لغو ارتقا' ?></a>
-                                                <a href="<?= siteUrl('admin/') ?>?id=<?= $user->id ?>"
+                                                <a href="<?= siteUrl('admin/') ?>?action=deleteUser&id=<?= $user->id ?>"
                                                    class="btn-danger p-2"
                                                    style="border-radius: 4px; border: 1px solid red"
                                                    onclick="return confirm('مطمئن هستید که میخواهید کاربر <?= $user->name ?> حذف کنید؟');">حذف</a>

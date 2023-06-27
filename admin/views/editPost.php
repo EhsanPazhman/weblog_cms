@@ -1,6 +1,6 @@
 <?php include "header.php";
-$id = $_GET['postId'];
-$post = readPost($id);
+$id = $_GET['postId'] ?? null;
+$post = read('articles',$id);
 ?>
     <!-- Sidebar Start -->
 <?php include "sidebar.php"; ?>
@@ -63,7 +63,7 @@ $post = readPost($id);
                         <input name="tags" type="text" class="form-control" id="floatingInput" value="<?= $post[0]->tags ?>">
                         <label for="floatingInput">تگ ها</label>
                     </div>
-                    <button type="submit" class="btn btn-warning mt-3">افزودن</button>
+                    <button type="submit" class="btn btn-warning mt-3">ویرایش</button>
                     </form>
                 </div>
                 <!-- Form End -->

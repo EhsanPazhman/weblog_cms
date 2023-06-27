@@ -29,3 +29,9 @@ function successMessage(string $msg, string $target): void
     $_SESSION['success'] = $msg;
     header('Location: ' . BASE_URL . $target);
 }
+// function to limit words
+function limit_words($string, $word_limit)
+{
+    $words = explode(" ",$string);
+    return implode(" ",array_splice($words,0,$word_limit));
+}

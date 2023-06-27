@@ -22,7 +22,7 @@
                 <!-- Form Start -->
                 <div class="bg-secondary rounded h-100 p-4 ">
                     <h6 class="mb-4">اطلاعات مقاله خود را بنویسید</h6>
-                    <form action="<?= siteUrl('admin/') ?>?action=addPost" method="post">
+                    <form action="<?= siteUrl('admin/') ?>?action=addPost" method="post" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <select class="form-select" id="floatingSelect"
                                 aria-label="Floating label select example" style="background-position: left 0.75rem center;" name="category">
