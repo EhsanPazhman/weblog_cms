@@ -10,10 +10,6 @@
                     </form>
                 </div>
                 <div class="col-12 col-lg-5">
-                    <div class="namad">
-                        <img src="https://toplearn.com/site/images/star2.png" alt="">
-                        <img src="https://toplearn.com/site/images/logo-samandehi.png" height="166px" alt="">
-                    </div>
                 </div>
             </div>
         </div>

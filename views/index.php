@@ -45,10 +45,10 @@
         <div>
             <h5 style="padding: 10px;">مقالات وبلاگ</h5>
             <div class="row">
-                    <?php foreach ($posts as $post): ?>
+                    <?php foreach ($pubPosts as $post): ?>
                         <div class="col-12 col-lg-4 mt-3">
                             <div class="post-item">
-                                <?= "<img src='".siteUrl("admin/assets/img/$post->img")."' alt='' style='width: 100%;'>" ?>
+                                <?= "<img src='".siteUrl("admin/$post->img")."' alt='' style='width: 100%;'>" ?>
                                 <div class="hovershow">
                                     <div class="hover-image-post d-none d-lg-flex">
                                     </div>

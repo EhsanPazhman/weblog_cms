@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (empty($_POST['comment']))
             setErrorAndRedirect('چیزی برای نظر ننوشتید!', "views/single.php?postId=$id");
         if (addComment($_POST))
-            successMessage('نظر با موفقیت درج شد', "views/single.php?postId=$id");
+            successMessage('نظر با موفقیت درج شد و در انتظار تایید مدیران قرار گرفت', "views/single.php?postId=$id");
         var_dump(successMessage());
     }
 }

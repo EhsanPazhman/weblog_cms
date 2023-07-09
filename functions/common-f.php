@@ -52,9 +52,9 @@ function readAll($tableName): bool|array
     function delete($tableName, $id): bool
     {
         global $conn;
-        $sql = "DELETE FROM `$tableName` WHERE id = $id";
+        $sql = "DELETE FROM `$tableName` WHERE id = :id";
         $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([':id' => $id]);
         return (bool)$stmt->rowCount();
     }
 

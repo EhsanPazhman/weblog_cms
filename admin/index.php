@@ -5,6 +5,9 @@ include "../bootstrap/init.php";
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Delete post, category, users.....
     if ($action == 'deletePost') {
+        // delete post img
+        $deleteImg = read('articles', $id);
+        unlink($deleteImg[0]->img);
         if (delete('articles', $id))
             successMessage('مقاله با موفقیت حذف شد', 'admin/views/posts.php');
     }
@@ -21,9 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             successMessage('کامنت با موفقیت حذف شد', 'admin/views/comments.php');
     }
     // change status ....
-    if (isset($id) and is_numeric($id)) {
-        if (changeRole($id))
-            successMessage('نقش کاربر با موفقیت تغییر یافت', 'admin/views/users.php');
+        if ($action == 'userRole') {
+            if (changeRole($id))
+                successMessage('نقش کاربر با موفقیت تغییر یافت', 'admin/views/users.php');
+        }
         if ($action == 'postStatus') {
             if (changeStatus('articles', $id))
                 successMessage('مقاله با موفقیت تایید شد', 'admin/views/posts.php');
@@ -33,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             if (changeStatus('comments', $id))
                 successMessage('کامنت با موفقیت تایید شد', 'admin/views/comments.php');
         }
-    }
 }
 
 // The condition of checking the type of server request
@@ -77,13 +80,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imgNameSeparator = explode('.', $imgName);
     $imgExtension = strtolower(end($imgNameSeparator));
     $imgNewName = md5(time() . $imgName) . '.' . $imgExtension;
-    $allowedFormats = ['jpg','png','jpeg','svg'];
+    $allowedFormats = ['jpg', 'png', 'jpeg', 'svg'];
     $imgAllowedSize = 2 * 1204 * 1024;
     $folderName = 'assets/img/' . $imgNewName;
     $description = $_POST['description'] ?? null;
     $tags = $_POST['tags'] ?? null;
     if ($action == 'addPost') {
-        if (empty($category) or empty($author) or empty($title) or empty($imgName) or empty($description) or empty($tags))
+        unlink($folderName);
+        if (empty($category) or empty($author) or empty($title) or empty($description) or empty($tags))
             setErrorAndRedirect('پر بودن تمامی فیلد ها الزامی میباشد!', 'admin/views/addPost.php');
         if (strlen($title) < 20)
             setErrorAndRedirect('عنوان نمیتوند کمتر از 10 حرف فارسی و یا 20 حرف انگلیسی باشد', 'admin/views/addPost.php');
@@ -93,21 +97,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             setErrorAndRedirect('متن مقاله نمیتواند کمتر از 5 حرف باشد', 'admin/views/addPost.php');
         if (strlen($tags) > 100)
             setErrorAndRedirect('تگها نمیتواند بیشتر از 50 حرف باشد', 'admin/views/addPost.php');
-        if (!in_array($imgExtension,$allowedFormats))
+        if (!in_array($imgExtension, $allowedFormats))
             setErrorAndRedirect('پسوند تصویر مجاز نیست!', 'admin/views/addPost.php');
         if ($imgSize > $imgAllowedSize)
             setErrorAndRedirect('حجم تصویر بیش از حد مجاز می باشد!', 'admin/views/addPost.php');
         if (move_uploaded_file($imgTmp, $folderName))
-            addPost($_POST, $imgNewName);
+            addPost($_POST, $folderName);
         successMessage('مقاله با موفقیت افزوده شد', 'admin/views/posts.php');
     }
     /* end add post conditions */
 
     /* start edit post conditions */
     if ($action == 'editPost') {
-//        var_dump($_POST);
-//        die();
-        if (empty($category) or empty($author) or empty($title) or empty($imgNewName) or empty($description) or empty($tags))
+        // delete post img
+        $deleteImg = read('articles', $id);
+        unlink($deleteImg[0]->img);
+        if (empty($category) or empty($author) or empty($title) or empty($description) or empty($tags))
             setErrorAndRedirect('پر بودن تمامی فیلد ها الزامی میباشد!', "admin/views/editPost.php?postId=$id");
         if (strlen($title) < 20)
             setErrorAndRedirect('عنوان نمیتوند کمتر از 10 حرف فارسی و یا 20 حرف انگلیسی باشد', "admin/views/editPost.php?postId=$id");
@@ -117,12 +122,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             setErrorAndRedirect('متن مقاله نمیتواند کمتر از 5 حرف باشد', "admin/views/editPost.php?postId=$id");
         if (strlen($tags) > 100)
             setErrorAndRedirect('تگها نمیتواند بیشتر از 50 حرف باشد', "admin/views/editPost.php?postId=$id");
-        if (!in_array($imgExtension,$allowedFormats))
+        if (!in_array($imgExtension, $allowedFormats))
             setErrorAndRedirect('پسوند تصویر مجاز نیست!', "admin/views/editPost.php?postId=$id");
         if ($imgSize > $imgAllowedSize)
             setErrorAndRedirect('حجم تصویر بیش از حد مجاز می باشد!', "admin/views/editPost.php?postId=$id");
         if (move_uploaded_file($imgTmp, $folderName))
-            updatePost($_POST, $imgNewName,$id);
+            updatePost($_POST, $folderName, $id);
         successMessage('مقاله با موفقیت ویرایش شد', 'admin/views/posts.php');
     }
     /* end edit post conditions */

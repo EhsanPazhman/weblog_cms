@@ -8,7 +8,7 @@ function addPost($data,$imgAddress): bool
     VALUES (:category, :author, :title, :img, :description, :tags)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':category' => $data['category'], ':author' => $data['author'], ':title' => $data['title'],
-    ':img' => $imgAddress, ':description' => $data['description'], ':tags' => $data['tags']]);
+        ':img' => $imgAddress, ':description' => $data['description'], ':tags' => $data['tags']]);
     return (bool)$stmt->rowCount();
 }
 // count all columns
@@ -17,6 +17,17 @@ $numRows = $stmt->fetchColumn();
 // Number of pages required.
 $totalPage = ceil($numRows/$prePag);
 // function to read all posts from database
+function readPublishedPosts(): bool|array
+{
+    global $startFrom;
+    global $prePag;
+    global $conn;
+    $sql = "SELECT * FROM `articles` WHERE status = 1 LIMIT $startFrom,$prePag";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
+$pubPosts = readPublishedPosts();
 $posts = readAll('articles');
 
 // function to update a post
@@ -27,7 +38,7 @@ function updatePost($data,$imgAddress,$id): bool
    img = :img, description = :description, tags = :tags, updated_at = CURRENT_TIMESTAMP WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':category' => $data['category'], ':author' => $data['author'],':title' => $data['title'],
-  ':img' => $imgAddress, ':description' => $data['description'], ':tags' => $data['tags'], ':id' => $id]);
+        ':img' => $imgAddress, ':description' => $data['description'], ':tags' => $data['tags'], ':id' => $id]);
     return (bool)$stmt->rowCount();
 }
 

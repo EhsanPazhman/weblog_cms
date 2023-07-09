@@ -26,7 +26,7 @@ $post = read('articles',$id);
                 <!-- Form Start -->
                 <div class="bg-secondary rounded h-100 p-4 ">
                     <h6 class="mb-4">ویرایش مقاله</h6>
-                    <form action="<?= siteUrl('admin/') ?>?action=editPost&id=<?= $post[0]->id ?>" method="post">
+                    <form action="<?= siteUrl('admin/') ?>?action=editPost&id=<?= $post[0]->id ?>" method="post" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <select name="category" class="form-select" id="floatingSelect"
                                 aria-label="Floating label select example" style="background-position: left 0.75rem center;">
@@ -53,6 +53,7 @@ $post = read('articles',$id);
                     </div>
                     <div class="form-floating mb-3">
                         <input name="img" class="form-control bg-dark" id="formFileLg" type="file" style="direction: ltr; cursor: pointer">
+                        <?= "<img src='".siteUrl("admin/{$post[0]->img}")."' alt='' style='width: 40%; height: 100px'>" ?>
                         <label for="formFileLg">تصویر فعلی</label>
                     </div>
                     <div class="form-floating">

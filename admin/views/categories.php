@@ -34,6 +34,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php if (sizeof($categories)): ?>
                         <?php foreach ($categories as $category): ?>
                         <tr>
                                 <td><?= $category->id ?></td>
@@ -50,6 +51,9 @@
                                 </td>
                         </tr>
                         <?php endforeach; ?>
+                        <?php else: ?>
+                            <td>هیچ چیزی وجود ندار هنوز!</td>
+                        <?php endif; ?>
                         </tbody>
                     </table>
                     <?php include "paginate.php"; ?>

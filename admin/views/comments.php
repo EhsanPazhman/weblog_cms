@@ -37,6 +37,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php if (sizeof($comments)): ?>
                                 <?php foreach ($comments as $comment): ?>
                                     <tr>
                                         <td><?= $comment->id ?></td>
@@ -62,6 +63,9 @@
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
+                             <?php else: ?>
+                            <td>هیچ چیزی وجود ندار هنوز!</td>
+                            <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>

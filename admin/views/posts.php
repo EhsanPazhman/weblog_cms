@@ -48,8 +48,8 @@
                                     <td><?= $post->category ?></td>
                                     <td><?= $post->author ?></td>
                                     <td style="width: 150px;"><?= $post->title ?></td>
-                                    <td><?= "<img src='".siteUrl("admin/assets/img/$post->img")."' alt='' style='width: 100px; height: 50px'>" ?></td>
-                                    <td><?= $post->tags ?></td>
+                                    <td><?= "<img src='".siteUrl("admin/$post->img")."' alt='' style='width: 100px; height: 50px'>" ?></td>
+                                    <td style="width: 150px;"><?= $post->tags ?></td>
                                     <td>
                                         <a href="<?= siteUrl('admin/') ?>?action=postStatus&id=<?= $post->id ?>">
                                         <?= $post->status == 1 ? "<i class='btn-outline-success p-2' style='border-radius: 4px; border: 1px solid green'>تایید شده</i>" :
