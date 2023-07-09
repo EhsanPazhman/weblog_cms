@@ -37,7 +37,9 @@ be successful and victorious.
 - PHP 8
 - HTML 5
 - CSS 3
-- Bootstrap 4 & 5 
+- Bootstrap 4 & 5
+- SCSS
+- Javascript
 - MariaDB 10.4.17 (You can use MySQL and...)
 - DB-Connection (PDO)
 
